@@ -1,10 +1,12 @@
 package ErrorsHandlers;
 
 import Services.JsonSerializer.SerializerDeserializer;
+import com.sun.deploy.net.HttpResponse;
 
 import javax.inject.Inject;
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
@@ -22,11 +24,11 @@ public class ErrorResponseTemplate implements Filter {
   /*
   *
   * "errors": [
-  *  {
-  *     "status": "422",
-  *     "source": "/data/attributes/firstName",
-  *     "title":  "Invalid Attribute"
-  *   }
+  *     {
+  *         "source": "/arithmex",
+  *         "title": "/ by zero",
+  *         "status": 400
+  *     }
   * ]
   * */
   public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
@@ -34,9 +36,11 @@ public class ErrorResponseTemplate implements Filter {
 
     filterChain.doFilter(servletRequest, servletResponse);
 
+    HttpServletResponse httpResponse = (HttpServletResponse) servletResponse;
+
     Exception exception = (Exception) servletRequest.getAttribute(RequestDispatcher.ERROR_EXCEPTION);
     String errorUrl = (String) servletRequest.getAttribute(RequestDispatcher.ERROR_REQUEST_URI);
-    Integer statusCode = (Integer) servletRequest.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
+    Integer statusCode = httpResponse.getStatus();
 
     HashMap<String, Object> responseMap = new HashMap<String, Object>();
     responseMap.put("status", statusCode);

@@ -13,6 +13,6 @@ public class NullPointerExceptionsHandler extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-    resp.getWriter().write(req.getDispatcherType().toString());
+//    resp.getWriter().write(req.getDispatcherType().toString());
   }
 }

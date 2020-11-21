@@ -11,6 +11,6 @@ public class GreetingsServlet extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     PrintWriter write  = resp.getWriter();
-    write.print("QQQ");
+    write.print("QQQ Greetings!!!");
   }
 }

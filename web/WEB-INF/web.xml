@@ -7,4 +7,8 @@
         <exception-type>java.lang.ArithmeticException</exception-type>
         <location>/error-handler/arithmex</location>
     </error-page>
+    <error-page>
+        <exception-type>java.lang.NullPointerException</exception-type>
+        <location>/error-handler/nullpointer</location>
+    </error-page>
 </web-app>

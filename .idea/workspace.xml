@@ -8,8 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="eb484a09-a6fd-49ab-8463-81b85ffd4b92" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LerningEEv2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LerningEEv2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/GreetingsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/GreetingsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ErrorsHandlers/ArithmeticExceptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ErrorsHandlers/ArithmeticExceptionsHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -208,7 +208,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605969687496</updated>
-      <workItem from="1605969688862" duration="4253000" />
+      <workItem from="1605969688862" duration="4804000" />
     </task>
     <servers />
   </component>

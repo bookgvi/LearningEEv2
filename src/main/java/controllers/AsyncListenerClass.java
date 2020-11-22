@@ -10,6 +10,7 @@ public class AsyncListenerClass implements AsyncListener {
     @Override
     public void onComplete(AsyncEvent asyncEvent) throws IOException {
       Logger.getLogger("ASYNC_LISTENER").log(Level.WARNING, "QQQ");
+      asyncEvent.getAsyncContext().getResponse().getWriter().write("\nfrom AsyncListenerClass#onComplete\n");
     }
 
     @Override

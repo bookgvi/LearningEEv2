@@ -9,13 +9,17 @@ import java.util.logging.Logger;
 public class AsyncListenerClass implements AsyncListener {
     @Override
     public void onComplete(AsyncEvent asyncEvent) throws IOException {
-      Logger.getLogger("ASYNC_LISTENER").log(Level.WARNING, "QQQ");
+//      Logger.getLogger("ASYNC_LISTENER_COMPLETE").log(Level.WARNING, "Timeout setting: " + asyncEvent.getAsyncContext().getTimeout());
       asyncEvent.getAsyncContext().getResponse().getWriter().write("\nfrom AsyncListenerClass#onComplete\n");
     }
 
     @Override
-    public void onTimeout(AsyncEvent asyncEvent) throws IOException {
+    public void onTimeout(AsyncEvent asyncEvent) throws IllegalStateException, IOException {
+        String exceptionMsg = "Timeout " + asyncEvent.getAsyncContext().getTimeout() + " exceed...";
 
+        Logger.getLogger("ASYNC_LISTENER_TIMEOUT").log(Level.WARNING, exceptionMsg);
+        asyncEvent.getAsyncContext().getResponse().getWriter().write(exceptionMsg);
+//        throw new IllegalStateException(exceptionMsg);
     }
 
     @Override

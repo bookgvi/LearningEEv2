@@ -2,6 +2,7 @@ package controllers;
 
 import javax.annotation.Resource;
 import javax.enterprise.concurrent.ManagedExecutorService;
+import javax.servlet.AsyncContext;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,10 +20,13 @@ public class ArithmeticExceptionServlet extends HttpServlet {
 
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    final AsyncContext asyncContext = req.startAsync();
+    asyncContext.addListener(new AsyncListenerClass());
     Integer result = null;
     try {
       result = mes.submit(new Callable<Integer>() {
         public Integer call() {
+          asyncContext.complete();
           return 10 / 0;
         }
       }).get();

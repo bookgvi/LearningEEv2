@@ -1,5 +1,8 @@
 package controllers;
 
+import service.ServiceDownload;
+
+import javax.inject.Inject;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,15 +11,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 @WebServlet(name = "DownloadFile handler", urlPatterns = "/download1")
 public class DownloadFileServlet extends HttpServlet {
+
   private final String defaultFile = "/test_file_for_download.txt";
   private final int BUF_SIZE = 1024;
+
+  @Inject
+  ServiceDownload d;
 
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,22 +28,9 @@ public class DownloadFileServlet extends HttpServlet {
     resp.setHeader("Content-Disposition", "attachment; filename=\"" + defaultFile + "\"");
     resp.setContentType(mimeType);
     resp.addCookie(this.setCoockies());
-    download(ctx, resp);
+    d.download(ctx, resp, BUF_SIZE, defaultFile);
   }
 
-  private void download(ServletContext ctx, HttpServletResponse resp) throws IOException {
-    int length = 0;
-    OutputStream out = resp.getOutputStream();
-    byte[] buff = new byte[BUF_SIZE];
-    InputStream in = ctx.getResourceAsStream(defaultFile);
-    Logger.getLogger("BUFFER").log(Level.INFO, String.valueOf(in));
-    while ((in != null) && ((length = in.read(buff)) != -1)) {
-      Logger.getLogger("BUFFER").log(Level.INFO, String.valueOf(length));
-      out.write(buff, 0, length);
-    }
-    out.flush();
-    out.close();
-  }
 
   private Cookie setCoockies() {
     Cookie guardCoockie = new Cookie("guard", "fuck U");

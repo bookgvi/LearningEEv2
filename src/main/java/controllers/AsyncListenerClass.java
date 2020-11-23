@@ -19,6 +19,7 @@ public class AsyncListenerClass implements AsyncListener {
 
         Logger.getLogger("ASYNC_LISTENER_TIMEOUT").log(Level.WARNING, exceptionMsg);
         asyncEvent.getAsyncContext().getResponse().getWriter().write(exceptionMsg);
+        asyncEvent.getAsyncContext().dispatch("/illegalstate");
 //        throw new IllegalStateException(exceptionMsg);
     }
 

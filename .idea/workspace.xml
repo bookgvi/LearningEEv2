@@ -9,8 +9,6 @@
     <list default="true" id="eb484a09-a6fd-49ab-8463-81b85ffd4b92" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AsyncListenerClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AsyncListenerClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/GreetingsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/GreetingsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,6 +47,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.34375" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="controllers" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">

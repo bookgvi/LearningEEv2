@@ -9,6 +9,8 @@
     <list default="true" id="eb484a09-a6fd-49ab-8463-81b85ffd4b92" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DownloadFileServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/DownloadFileServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/ServiceDownload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/JsonSerializer/ServiceDownload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -219,7 +221,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605969687496</updated>
       <workItem from="1605969688862" duration="10751000" />
-      <workItem from="1606161086681" duration="521000" />
+      <workItem from="1606161086681" duration="4976000" />
     </task>
     <servers />
   </component>

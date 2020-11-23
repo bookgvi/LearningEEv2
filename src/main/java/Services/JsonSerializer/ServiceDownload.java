@@ -1,4 +1,4 @@
-package service;
+package Services.JsonSerializer;
 
 import javax.enterprise.context.RequestScoped;
 import javax.servlet.ServletContext;
@@ -15,7 +15,7 @@ public class ServiceDownload {
     int length = 0;
     OutputStream out = resp.getOutputStream();
     byte[] buff = new byte[BUF_SIZE];
-    InputStream in = ctx.getResourceAsStream(fileName);
+    InputStream in = ctx.getResourceAsStream("/" + fileName);
     Logger.getLogger("BUFFER").log(Level.INFO, String.valueOf(in));
     while ((in != null) && ((length = in.read(buff)) != -1)) {
       Logger.getLogger("BUFFER").log(Level.INFO, String.valueOf(length));

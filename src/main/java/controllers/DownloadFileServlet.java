@@ -1,6 +1,7 @@
 package controllers;
 
-import service.ServiceDownload;
+import defenitions.Defenitions;
+import Services.JsonSerializer.ServiceDownload;
 
 import javax.inject.Inject;
 import javax.servlet.ServletContext;
@@ -15,8 +16,6 @@ import java.io.IOException;
 @WebServlet(name = "DownloadFile handler", urlPatterns = "/download1")
 public class DownloadFileServlet extends HttpServlet {
 
-  private final String defaultFile = "/test_file_for_download.txt";
-  private final int BUF_SIZE = 1024;
 
   @Inject
   ServiceDownload d;
@@ -24,11 +23,11 @@ public class DownloadFileServlet extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     ServletContext ctx = getServletConfig().getServletContext();
-    String mimeType = ctx.getMimeType(this.defaultFile) != null ? ctx.getMimeType(this.defaultFile) : "text/plain";
-    resp.setHeader("Content-Disposition", "attachment; filename=\"" + defaultFile + "\"");
+    String mimeType = ctx.getMimeType(Defenitions.defaultFileName) != null ? ctx.getMimeType(Defenitions.defaultFileName) : "text/plain";
+    resp.setHeader("Content-Disposition", "attachment; filename=\"" + Defenitions.defaultFileName + "\"");
     resp.setContentType(mimeType);
     resp.addCookie(this.setCoockies());
-    d.download(ctx, resp, BUF_SIZE, defaultFile);
+    d.download(ctx, resp, Defenitions.BUF_SIZE, Defenitions.defaultFileName);
   }
 
 

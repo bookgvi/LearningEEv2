@@ -3,6 +3,7 @@ package controllers;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,6 +24,7 @@ public class DownloadFileServlet extends HttpServlet {
     String mimeType = ctx.getMimeType(this.defaultFile) != null ? ctx.getMimeType(this.defaultFile) : "text/plain";
     resp.setHeader("Content-Disposition", "attachment; filename=\"" + defaultFile + "\"");
     resp.setContentType(mimeType);
+    resp.addCookie(this.setCoockies());
     download(ctx, resp);
   }
 
@@ -38,5 +40,12 @@ public class DownloadFileServlet extends HttpServlet {
     }
     out.flush();
     out.close();
+  }
+
+  private Cookie setCoockies() {
+    Cookie guardCoockie = new Cookie("guard", "fuck U");
+    guardCoockie.setHttpOnly(true);
+    guardCoockie.setMaxAge(-20);
+    return guardCoockie;
   }
 }

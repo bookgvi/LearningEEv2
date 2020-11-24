@@ -1,10 +1,11 @@
-package controllers;
+package controllers.News;
 
 import Services.DataProviders.NewsDataProvider;
 import Services.Utils.ParamsValidator;
 import Services.Utils.PathParser;
 
 import javax.inject.Inject;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,7 +21,7 @@ public class NewsController extends HttpServlet {
   NewsDataProvider newsDP;
 
   @Override
-  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     PrintWriter out = resp.getWriter();
     resp.setContentType("application/json");
 
@@ -30,10 +31,12 @@ public class NewsController extends HttpServlet {
     Integer firstId = ParamsValidator.id(firstParam);
 
     try {
-      System.out.printf("COntroller: %s%n", pathParams.length);
-      System.out.printf("COntroller: %s%n", firstParam);
-      if (firstId != null) out.printf("%n%s%n", newsDP.findOne(firstId));
-      else if(pathParams.length < 2) out.printf("%n%s%n", newsDP.findAll());
+      if (firstId != null)
+        out.printf("%n%s%n", newsDP.findOne(firstId));
+      else if(pathParams.length < 2)
+        out.printf("%n%s%n", newsDP.findAll());
+      else if(pathParams.length > 2 && pathParams.length < 5)
+        getServletContext().getNamedDispatcher("articles of news").forward(req, resp);
       else out.write("{}");
     } catch (SQLException e) {
       e.printStackTrace();

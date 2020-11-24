@@ -1,7 +1,7 @@
 package controllers;
 
 import defenitions.Defenitions;
-import Services.JsonSerializer.ServiceDownload;
+import Services.Download.ServiceDownload;
 
 import javax.inject.Inject;
 import javax.servlet.ServletContext;

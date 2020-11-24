@@ -1,4 +1,4 @@
-package Services.JsonSerializer;
+package Services.JDBC;
 
 import defenitions.DB;
 
@@ -14,10 +14,15 @@ import java.sql.SQLException;
 public class JDBCResource {
   private Connection con;
 
-  public Connection createConnection() throws NamingException, SQLException {
-    InitialContext ctx = new InitialContext();
-    DataSource ds = (DataSource) ctx.lookup(DB.DATA_SOURCE);
-    return con = ds.getConnection();
+  public Connection createConnection() {
+    try {
+      InitialContext ctx = new InitialContext();
+      DataSource ds = (DataSource) ctx.lookup(DB.DATA_SOURCE);
+      return con = ds.getConnection();
+    } catch (NamingException | SQLException ex) {
+      ex.getMessage();
+    }
+    return null;
   }
 
   @PreDestroy

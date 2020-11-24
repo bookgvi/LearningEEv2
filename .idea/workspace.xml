@@ -8,7 +8,11 @@
   <component name="ChangeListManager">
     <list default="true" id="eb484a09-a6fd-49ab-8463-81b85ffd4b92" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/JsonSerializer/JDBCResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/JsonSerializer/JDBCResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/NewsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/NewsDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/JsonSerializer/JDBCResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/JDBC/JDBCResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/JsonSerializer/ServiceDownload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/Download/ServiceDownload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AsyncDownloadServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AsyncDownloadServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DownloadFileServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/DownloadFileServlet.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -275,7 +279,7 @@
       <updated>1605969687496</updated>
       <workItem from="1605969688862" duration="10751000" />
       <workItem from="1606161086681" duration="6574000" />
-      <workItem from="1606213911336" duration="992000" />
+      <workItem from="1606213911336" duration="1440000" />
     </task>
     <servers />
   </component>

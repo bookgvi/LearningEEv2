@@ -1,14 +1,10 @@
 package controllers;
 
-import Services.JsonSerializer.ServiceDownload;
 import defenitions.Defenitions;
 
-import javax.activation.MimeType;
 import javax.annotation.Resource;
 import javax.enterprise.concurrent.ManagedExecutorService;
-import javax.inject.Inject;
 import javax.servlet.AsyncContext;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;

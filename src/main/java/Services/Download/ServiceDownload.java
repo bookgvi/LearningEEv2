@@ -1,4 +1,4 @@
-package Services.JsonSerializer;
+package Services.Download;
 
 import javax.enterprise.context.RequestScoped;
 import javax.servlet.ServletContext;

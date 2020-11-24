@@ -2,7 +2,6 @@ package controllers.News;
 
 import Services.DataProviders.NewsDataProvider;
 import Services.Utils.ParamsValidator;
-import Services.Utils.PathParser;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -25,10 +24,13 @@ public class NewsController extends HttpServlet {
     PrintWriter out = resp.getWriter();
     resp.setContentType("application/json");
 
-    String pathInfo = req.getPathInfo();
-    String[] pathParams = PathParser.getUrlParams(pathInfo);
-    String firstParam = PathParser.getFirstId(pathInfo);
-    Integer firstId = ParamsValidator.id(firstParam);
+    String[] pathParams = new String[0];
+    Integer firstId = null;
+
+    if (req.getAttribute("pathInfo") != null) {
+      pathParams = (String[]) req.getAttribute("pathParams");
+      firstId = pathParams.length > 1 ? ParamsValidator.id(pathParams[1]) : null;
+    }
 
     try {
       if (firstId != null)
@@ -36,7 +38,7 @@ public class NewsController extends HttpServlet {
       else if(pathParams.length < 2)
         out.printf("%n%s%n", newsDP.findAll());
       else if(pathParams.length > 2 && pathParams.length < 5)
-        getServletContext().getNamedDispatcher("articles of news").forward(req, resp);
+        getServletContext().getRequestDispatcher("/" + pathParams[2]).forward(req, resp);
       else out.write("{}");
     } catch (SQLException e) {
       e.printStackTrace();

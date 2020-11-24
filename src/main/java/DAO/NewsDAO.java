@@ -2,7 +2,6 @@ package DAO;
 
 import Services.JDBC.JDBCResource;
 
-import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -20,17 +19,9 @@ public class NewsDAO {
   @Inject
   JDBCResource jdbcResource;
 
-  @PostConstruct
-  private void setStatement() {
-    try {
-      statement = jdbcResource.createConnection().createStatement();
-    } catch (SQLException ex) {
-      ex.printStackTrace();
-    }
-  }
-
   public ResultSet getAll() {
     try {
+      statement = jdbcResource.createConnection().createStatement();
       result = statement.executeQuery("SELECT * FROM news ORDER BY id");
     } catch (SQLException ex) {
       ex.getMessage();

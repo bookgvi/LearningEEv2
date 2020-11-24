@@ -26,15 +26,15 @@ public class DownloadFileServlet extends HttpServlet {
     String mimeType = ctx.getMimeType(Defenitions.defaultFileName) != null ? ctx.getMimeType(Defenitions.defaultFileName) : "text/plain";
     resp.setHeader("Content-Disposition", "attachment; filename=\"" + Defenitions.defaultFileName + "\"");
     resp.setContentType(mimeType);
-    resp.addCookie(this.setCoockies());
+//    resp.addCookie(this.setCookies());
     d.download(ctx, resp, Defenitions.BUF_SIZE, Defenitions.defaultFileName);
   }
 
 
-  private Cookie setCoockies() {
-    Cookie guardCoockie = new Cookie("guard", "fuck U");
-    guardCoockie.setHttpOnly(true);
-    guardCoockie.setMaxAge(-20);
-    return guardCoockie;
+  private Cookie setCookies() {
+    Cookie guardCookie = new Cookie("guard", "fuck U");
+    guardCookie.setHttpOnly(true);
+    guardCookie.setMaxAge(10);
+    return guardCookie;
   }
 }

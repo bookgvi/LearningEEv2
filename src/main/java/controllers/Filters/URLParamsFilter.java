@@ -1,4 +1,4 @@
-package controllers.News;
+package controllers.Filters;
 
 import Services.Utils.PathParser;
 
@@ -8,21 +8,20 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 @WebFilter(
-  urlPatterns = "/news/*",
+  urlPatterns = "/*",
   dispatcherTypes = {DispatcherType.REQUEST}
 )
 public class URLParamsFilter implements Filter {
   @Override
   public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-    String pathInfo;
-    String[] pathParams;
 
     if (servletRequest instanceof HttpServletRequest) {
-      HttpServletRequest request = (HttpServletRequest) servletRequest;
-      pathInfo = request.getPathInfo();
-      pathParams = PathParser.getUrlParams(pathInfo);
-
       if (servletRequest.getAttribute("pathInfo") == null) {
+
+        HttpServletRequest request = (HttpServletRequest) servletRequest;
+        String pathInfo = request.getPathInfo();
+        String[] pathParams = PathParser.getUrlParams(pathInfo);
+
         servletRequest.setAttribute("pathInfo", pathInfo);
         servletRequest.setAttribute("pathParams", pathParams);
       }

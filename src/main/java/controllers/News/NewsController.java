@@ -33,11 +33,11 @@ public class NewsController extends HttpServlet {
     }
 
     try {
-      if (firstId != null)
-        out.printf("%n%s%n", newsDP.findOne(firstId));
-      else if(pathParams.length < 2)
+      if (pathParams.length < 2)
         out.printf("%n%s%n", newsDP.findAll());
-      else if(pathParams.length > 2 && pathParams.length < 5)
+      else if (pathParams.length == 2 && firstId != null)
+        out.printf("%n%s%n", newsDP.findOne(firstId));
+      else if (pathParams.length > 2 && pathParams.length < 5)
         getServletContext().getRequestDispatcher("/" + pathParams[2]).forward(req, resp);
       else out.write("{}");
     } catch (SQLException e) {

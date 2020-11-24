@@ -3,6 +3,7 @@ package Services.JsonSerializer;
 import com.google.gson.Gson;
 
 import javax.enterprise.context.RequestScoped;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 @RequestScoped
@@ -10,6 +11,10 @@ public class SerializerDeserializer {
 
   public String jsonSerialize(HashMap map, boolean isError) {
     return serializer(map, isError);
+  }
+
+  public String jsonSerialize(ArrayList<HashMap<String, Object>> array, boolean isError) {
+    return serializer(array, isError);
   }
 
   public String jsonSerialize(HashMap[] array, boolean isError) {

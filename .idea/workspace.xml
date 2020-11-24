@@ -8,9 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="eb484a09-a6fd-49ab-8463-81b85ffd4b92" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/News/NewsDataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/News/NewsDataProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/NewsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/NewsDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/News/NewsDataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/DataProviders/NewsDataProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/NewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/NewsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +110,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.34375" />
@@ -287,7 +287,7 @@
       <updated>1605969687496</updated>
       <workItem from="1605969688862" duration="10751000" />
       <workItem from="1606161086681" duration="6574000" />
-      <workItem from="1606213911336" duration="2699000" />
+      <workItem from="1606213911336" duration="5093000" />
     </task>
     <servers />
   </component>

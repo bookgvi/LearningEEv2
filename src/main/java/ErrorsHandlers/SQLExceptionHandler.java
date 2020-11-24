@@ -11,6 +11,7 @@ import java.io.IOException;
 public class SQLExceptionHandler extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    System.out.printf("QQQ: %s%n", req.getContextPath());
     resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
   }
 }

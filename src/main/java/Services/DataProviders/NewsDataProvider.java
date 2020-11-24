@@ -1,14 +1,14 @@
-package Services.News;
+package Services.DataProviders;
 
 import DAO.NewsDAO;
 import Services.JsonSerializer.SerializerDeserializer;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 @Stateless
@@ -19,21 +19,27 @@ public class NewsDataProvider {
   SerializerDeserializer sd;
 
   public String findAll() throws SQLException {
+    ArrayList<HashMap<String, Object>> resultArr = new ArrayList<>();
     ResultSet news = newsDAO.getAll();
-    Integer id = news.getInt("id");
+
+    while (news.next()) {
+      resultArr.add(getNewsRecord(news));
+    }
+    return sd.jsonSerialize(resultArr, false);
+  }
+
+
+  private HashMap<String, Object> getNewsRecord(ResultSet news) throws SQLException {
+    HashMap<String, Object> responseMap = new HashMap<>();
+    int id = news.getInt("id");
     String lang = news.getString("lang");
     String title = news.getString("title");
-    int dateStamp = news.getInt("date");
+    String date = new Date(news.getLong("date") * 1000).toString();
 
-    SimpleDateFormat sdf = new SimpleDateFormat("YY-MM-dd");
-    String date = sdf.format(new Date(dateStamp));
-
-    HashMap<String, Object> responseMap = new HashMap<>();
     responseMap.put("id", id);
     responseMap.put("lang", lang);
     responseMap.put("title", title);
     responseMap.put("date", date);
-
-    return sd.jsonSerialize(responseMap, false);
+    return responseMap;
   }
 }

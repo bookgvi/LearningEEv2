@@ -3,7 +3,7 @@ package Services.DataProviders;
 import DAO.NewsDAO;
 import Services.JsonSerializer.SerializerDeserializer;
 
-import javax.ejb.Stateless;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import java.sql.Date;
 import java.sql.ResultSet;
@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-@Stateless
+@RequestScoped
 public class NewsDataProvider {
   @Inject
   NewsDAO newsDAO;

@@ -2,6 +2,7 @@ package Services.JsonSerializer;
 
 import defenitions.DB;
 
+import javax.annotation.PreDestroy;
 import javax.enterprise.context.ApplicationScoped;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -11,13 +12,16 @@ import java.sql.SQLException;
 
 @ApplicationScoped
 public class JDBCResource {
+  private Connection con;
+
   public Connection createConnection() throws NamingException, SQLException {
     InitialContext ctx = new InitialContext();
     DataSource ds = (DataSource) ctx.lookup(DB.DATA_SOURCE);
-    return ds.getConnection();
+    return con = ds.getConnection();
   }
 
-  public void closeConnection(Connection conn) throws SQLException {
-    conn.close();
+  @PreDestroy
+  private void closeConnection() throws SQLException {
+    con.close();
   }
 }

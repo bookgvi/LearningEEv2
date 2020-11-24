@@ -13,7 +13,7 @@ public class SerializerDeserializer {
     return serializer(map, isError);
   }
 
-  public String jsonSerialize(ArrayList<HashMap<String, Object>> array, boolean isError) {
+  public <T, V> String jsonSerialize(ArrayList<HashMap<T, V>> array, boolean isError) {
     return serializer(array, isError);
   }
 

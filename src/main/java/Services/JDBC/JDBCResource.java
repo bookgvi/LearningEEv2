@@ -26,7 +26,11 @@ public class JDBCResource {
   }
 
   @PreDestroy
-  private void closeConnection() throws SQLException {
-    con.close();
+  private void closeConnection() {
+    try {
+      con.close();
+    } catch (SQLException ex) {
+      ex.printStackTrace();
+    }
   }
 }

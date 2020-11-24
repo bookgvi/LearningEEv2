@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 @WebServlet(name = "News controller", urlPatterns = "/news")
 public class NewsController extends HttpServlet {
@@ -20,6 +21,10 @@ public class NewsController extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     PrintWriter out = resp.getWriter();
-    out.printf("%n%s%n", newsDP.findAll());
+    try {
+      out.printf("%n%s%n", newsDP.findAll());
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
   }
 }

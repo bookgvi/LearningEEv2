@@ -15,4 +15,8 @@
         <exception-type>java.lang.IllegalStateException</exception-type>
         <location>/error-handler/illegalstate</location>
     </error-page>
+    <error-page>
+        <exception-type>java.sql.SQLException</exception-type>
+        <location>/error-handler/sqlexception</location>
+    </error-page>
 </web-app>

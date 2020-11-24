@@ -8,7 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="eb484a09-a6fd-49ab-8463-81b85ffd4b92" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/JDBC/JDBCResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/JDBC/JDBCResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/News/NewsDataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/News/NewsDataProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/NewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/NewsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,6 +68,16 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="PostgreSQL - learningjpa@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="learningjpa: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="news: table" type="69fad909:PgImplModel$LocalTable" />
       </path>
     </expand>
     <select />
@@ -275,7 +287,7 @@
       <updated>1605969687496</updated>
       <workItem from="1605969688862" duration="10751000" />
       <workItem from="1606161086681" duration="6574000" />
-      <workItem from="1606213911336" duration="1858000" />
+      <workItem from="1606213911336" duration="2699000" />
     </task>
     <servers />
   </component>

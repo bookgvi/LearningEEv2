@@ -7,7 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb484a09-a6fd-49ab-8463-81b85ffd4b92" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/NewsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/NewsDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/DataProviders/NewsDataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/DataProviders/NewsDataProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Services/JsonSerializer/SerializerDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/JsonSerializer/SerializerDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/NewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/NewsController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,6 +87,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>

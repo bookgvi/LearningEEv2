@@ -6,13 +6,16 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 @RequestScoped
 public class NewsDAO {
-  private Statement statement;
+  private Statement statement = null;
+  private PreparedStatement ps = null;
+  private ResultSet result = null;
 
   @Inject
   JDBCResource jdbcResource;
@@ -27,7 +30,6 @@ public class NewsDAO {
   }
 
   public ResultSet getAll() {
-    ResultSet result = null;
     try {
       result = statement.executeQuery("SELECT * FROM news ORDER BY id");
     } catch (SQLException ex) {
@@ -36,10 +38,25 @@ public class NewsDAO {
     return result;
   }
 
+  public ResultSet getOne(Integer id) {
+
+    String findById = "SELECT * FROM news WHERE id = ?";
+    try {
+      ps = jdbcResource.createConnection().prepareStatement(findById);
+      ps.setInt(1, id);
+
+      result = ps.executeQuery();
+    } catch (SQLException ex) {
+      ex.printStackTrace();
+    }
+    return result;
+  }
+
   @PreDestroy
   private void closeStatement() {
     try {
-      statement.close();
+      if (statement != null) statement.close();
+      if (ps != null) ps.close();
     } catch (SQLException ex) {
       ex.printStackTrace();
     }

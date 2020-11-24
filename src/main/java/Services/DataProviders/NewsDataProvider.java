@@ -28,6 +28,15 @@ public class NewsDataProvider {
     return sd.jsonSerialize(resultArr, false);
   }
 
+  public String findOne(Integer id) throws SQLException {
+    ResultSet news = newsDAO.getOne(id);
+    HashMap<String, Object> responseMap = null;
+    while (news.next()) {
+      responseMap = getNewsRecord(news);
+    }
+    return sd.jsonSerialize(responseMap, false);
+  }
+
 
   private HashMap<String, Object> getNewsRecord(ResultSet news) throws SQLException {
     HashMap<String, Object> responseMap = new HashMap<>();

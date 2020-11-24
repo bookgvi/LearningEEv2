@@ -1,6 +1,7 @@
 package controllers;
 
 import Services.DataProviders.NewsDataProvider;
+import Services.Utils.PathParser;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -12,7 +13,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
-@WebServlet(name = "News controller", urlPatterns = "/news")
+@WebServlet(name = "News controller", urlPatterns = "/news/*")
 public class NewsController extends HttpServlet {
 
   @Inject
@@ -22,8 +23,17 @@ public class NewsController extends HttpServlet {
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     PrintWriter out = resp.getWriter();
     resp.setContentType("application/json");
+
+    Integer firstId = null;
+    String pathInfo = req.getPathInfo();
+    if (pathInfo != null) {
+      firstId = PathParser.getFirstId(pathInfo);
+    }
+
+
     try {
-      out.printf("%n%s%n", newsDP.findAll());
+      if (firstId != null) out.printf("%n%s%n", newsDP.findOne(firstId));
+      else out.printf("%n%s%n", newsDP.findAll());
     } catch (SQLException e) {
       e.printStackTrace();
     }

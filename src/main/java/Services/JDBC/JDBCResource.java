@@ -14,23 +14,15 @@ import java.sql.SQLException;
 public class JDBCResource {
   private Connection con;
 
-  public Connection createConnection() {
+  public DataSource getDataSource() {
     try {
       InitialContext ctx = new InitialContext();
-      DataSource ds = (DataSource) ctx.lookup(DB.DATA_SOURCE);
-      return con = ds.getConnection();
-    } catch (NamingException | SQLException ex) {
+      return (DataSource) ctx.lookup(DB.DATA_SOURCE);
+//      return con = ds.getConnection();
+    } catch (NamingException  ex) {
       ex.getMessage();
     }
     return null;
   }
 
-  @PreDestroy
-  private void closeConnection() {
-    try {
-      con.close();
-    } catch (SQLException ex) {
-      ex.printStackTrace();
-    }
-  }
 }

@@ -5,10 +5,7 @@ import Services.JDBC.JDBCResource;
 import javax.annotation.PreDestroy;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 @RequestScoped
 public class NewsDAO {
@@ -17,8 +14,11 @@ public class NewsDAO {
   @Inject
   JDBCResource jdbcResource;
 
-  public ResultSet getAll() {
-    try (Statement statement = this.jdbcResource.createConnection().createStatement()) {
+  public ResultSet getAll () {
+    try (
+        Connection con = this.jdbcResource.getDataSource().getConnection();
+        Statement statement = con.createStatement();
+    ) {
       result = statement.executeQuery("SELECT * FROM news ORDER BY id");
     } catch (SQLException ex) {
       ex.getMessage();
@@ -26,10 +26,12 @@ public class NewsDAO {
     return result;
   }
 
-  public ResultSet getOne(Integer id) {
-
+  public ResultSet getOne (Integer id) {
     String findById = "SELECT * FROM news WHERE id = ?";
-    try (PreparedStatement ps = this.jdbcResource.createConnection().prepareStatement(findById)) {
+    try (
+        Connection con = this.jdbcResource.getDataSource().getConnection();
+        PreparedStatement ps = con.prepareStatement(findById);
+    ) {
 
       ps.setInt(1, id);
 

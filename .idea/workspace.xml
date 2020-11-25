@@ -7,9 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb484a09-a6fd-49ab-8463-81b85ffd4b92" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/877464dd-d174-4f3f-b2aa-071049d1fcbf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/877464dd-d174-4f3f-b2aa-071049d1fcbf.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/NewsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/NewsDAO.java" afterDir="false" />
     </list>
@@ -116,7 +113,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.34375" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -290,7 +287,7 @@
       <workItem from="1605969688862" duration="10751000" />
       <workItem from="1606161086681" duration="6574000" />
       <workItem from="1606213911336" duration="5093000" />
-      <workItem from="1606296929948" duration="453000" />
+      <workItem from="1606296929948" duration="2451000" />
     </task>
     <servers />
   </component>

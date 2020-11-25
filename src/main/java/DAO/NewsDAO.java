@@ -12,16 +12,13 @@ import java.sql.Statement;
 
 @RequestScoped
 public class NewsDAO {
-  private Statement statement = null;
-  private PreparedStatement ps = null;
   private ResultSet result = null;
 
   @Inject
   JDBCResource jdbcResource;
 
   public ResultSet getAll() {
-    try {
-      statement = jdbcResource.createConnection().createStatement();
+    try (Statement statement = this.jdbcResource.createConnection().createStatement()) {
       result = statement.executeQuery("SELECT * FROM news ORDER BY id");
     } catch (SQLException ex) {
       ex.getMessage();
@@ -32,8 +29,8 @@ public class NewsDAO {
   public ResultSet getOne(Integer id) {
 
     String findById = "SELECT * FROM news WHERE id = ?";
-    try {
-      ps = jdbcResource.createConnection().prepareStatement(findById);
+    try (PreparedStatement ps = this.jdbcResource.createConnection().prepareStatement(findById)) {
+
       ps.setInt(1, id);
 
       result = ps.executeQuery();
@@ -43,13 +40,4 @@ public class NewsDAO {
     return result;
   }
 
-  @PreDestroy
-  private void closeStatement() {
-    try {
-      if (statement != null) statement.close();
-      if (ps != null) ps.close();
-    } catch (SQLException ex) {
-      ex.printStackTrace();
-    }
-  }
 }

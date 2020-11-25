@@ -9,7 +9,6 @@ import java.sql.*;
 
 @RequestScoped
 public class NewsDAO {
-  private ResultSet result = null;
 
   @Inject
   JDBCResource jdbcResource;
@@ -19,11 +18,13 @@ public class NewsDAO {
         Connection con = this.jdbcResource.getDataSource().getConnection();
         Statement statement = con.createStatement();
     ) {
-      result = statement.executeQuery("SELECT * FROM news ORDER BY id");
+      try (ResultSet result = statement.executeQuery("SELECT * FROM news ORDER BY id");) {
+        return result;
+      }
     } catch (SQLException ex) {
       ex.getMessage();
     }
-    return result;
+    return null;
   }
 
   public ResultSet getOne (Integer id) {
@@ -34,12 +35,13 @@ public class NewsDAO {
     ) {
 
       ps.setInt(1, id);
-
-      result = ps.executeQuery();
+      try (ResultSet result = ps.executeQuery();) {
+        return result;
+      }
     } catch (SQLException ex) {
       ex.printStackTrace();
     }
-    return result;
+    return null;
   }
 
 }

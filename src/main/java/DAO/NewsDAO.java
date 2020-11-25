@@ -3,12 +3,16 @@ package DAO;
 import Services.JDBC.JDBCResource;
 
 import javax.annotation.PreDestroy;
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
+import java.io.Serializable;
 import java.sql.*;
 
-@RequestScoped
-public class NewsDAO {
+@SessionScoped
+public class NewsDAO implements Serializable {
+  public static final long serialVersionUID = 1L;
 
   @Inject
   JDBCResource jdbcResource;

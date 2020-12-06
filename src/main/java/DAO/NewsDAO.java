@@ -3,53 +3,49 @@ package DAO;
 import Services.JDBC.JDBCResource;
 
 import javax.annotation.PreDestroy;
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.io.Serializable;
+import java.sql.*;
 
-@RequestScoped
-public class NewsDAO {
-  private Statement statement = null;
-  private PreparedStatement ps = null;
-  private ResultSet result = null;
+@SessionScoped
+public class NewsDAO implements Serializable {
+  public static final long serialVersionUID = 1L;
 
   @Inject
   JDBCResource jdbcResource;
 
-  public ResultSet getAll() {
-    try {
-      statement = jdbcResource.createConnection().createStatement();
-      result = statement.executeQuery("SELECT * FROM news ORDER BY id");
+  public ResultSet getAll () {
+    try (
+        Connection con = this.jdbcResource.getDataSource().getConnection();
+        Statement statement = con.createStatement();
+    ) {
+      try (ResultSet result = statement.executeQuery("SELECT * FROM news ORDER BY id");) {
+        return result;
+      }
     } catch (SQLException ex) {
       ex.getMessage();
     }
-    return result;
+    return null;
   }
 
-  public ResultSet getOne(Integer id) {
-
+  public ResultSet getOne (Integer id) {
     String findById = "SELECT * FROM news WHERE id = ?";
-    try {
-      ps = jdbcResource.createConnection().prepareStatement(findById);
+    try (
+        Connection con = this.jdbcResource.getDataSource().getConnection();
+        PreparedStatement ps = con.prepareStatement(findById);
+    ) {
+
       ps.setInt(1, id);
-
-      result = ps.executeQuery();
+      try (ResultSet result = ps.executeQuery();) {
+        return result;
+      }
     } catch (SQLException ex) {
       ex.printStackTrace();
     }
-    return result;
+    return null;
   }
 
-  @PreDestroy
-  private void closeStatement() {
-    try {
-      if (statement != null) statement.close();
-      if (ps != null) ps.close();
-    } catch (SQLException ex) {
-      ex.printStackTrace();
-    }
-  }
 }

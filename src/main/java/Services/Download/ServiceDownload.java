@@ -10,8 +10,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @RequestScoped
-public class ServiceDownload {
-  public void download(ServletContext ctx, HttpServletResponse resp, int BUF_SIZE, String fileName) throws IOException {
+public class ServiceDownload implements Runnable {
+  public void   download(ServletContext ctx, HttpServletResponse resp, int BUF_SIZE, String fileName) throws IOException {
     int length = 0;
     OutputStream out = resp.getOutputStream();
     byte[] buff = new byte[BUF_SIZE];
@@ -25,4 +25,14 @@ public class ServiceDownload {
     out.close();
   }
 
+  @Override
+  public void run () {
+
+  }
+
+  final class Test {}
+
+  private void test() {
+    Test test = new Test();
+  }
 }

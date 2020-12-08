@@ -14,9 +14,9 @@
       <Owner>bookgvi</Owner>
       <IntrospectionStateNumber>2884</IntrospectionStateNumber>
       <Current>1</Current>
-      <Relations>sequence|table|16602|16599|1
-sequence|table|16442|16404|1
+      <Relations>sequence|table|16442|16404|1
 sequence|table|16589|16581|1
+sequence|table|16602|16599|1
 </Relations>
     </database>
     <database id="4" parent="1" name="postgres">

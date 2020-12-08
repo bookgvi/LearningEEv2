@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 @WebFilter(
   filterName = "Error template",
-  urlPatterns = "/*",
+  urlPatterns = "*",
   dispatcherTypes = {DispatcherType.ERROR}
 )
 public class ErrorResponseTemplate implements Filter {

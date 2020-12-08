@@ -15,4 +15,14 @@ public class NullPointerExceptionsHandler extends HttpServlet {
     resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 //    resp.getWriter().write(req.getDispatcherType().toString());
   }
+
+  @Override
+  protected void doPost (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+  }
+
+  @Override
+  protected void doDelete (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+  }
 }

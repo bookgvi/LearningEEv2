@@ -7,9 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb484a09-a6fd-49ab-8463-81b85ffd4b92" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/877464dd-d174-4f3f-b2aa-071049d1fcbf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/877464dd-d174-4f3f-b2aa-071049d1fcbf.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/Download/ServiceDownload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/Download/ServiceDownload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ErrorsHandlers/ErrorResponseTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ErrorsHandlers/ErrorResponseTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ErrorsHandlers/NotFound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ErrorsHandlers/NotFound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ErrorsHandlers/NullPointerExceptionsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ErrorsHandlers/NullPointerExceptionsHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DeleteWithBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/DeleteWithBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -290,7 +293,7 @@
       <workItem from="1606213911336" duration="5093000" />
       <workItem from="1607250730410" duration="13000" />
       <workItem from="1607251371166" duration="57000" />
-      <workItem from="1607431145533" duration="2054000" />
+      <workItem from="1607431145533" duration="6844000" />
     </task>
     <servers />
   </component>

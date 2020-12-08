@@ -7,7 +7,7 @@ import java.io.IOException;
 
 @WebFilter(
   filterName = "Not Found handler",
-  urlPatterns = "/*",
+  urlPatterns = "/QQQ",
   dispatcherTypes = {DispatcherType.ERROR}
 )
 public class NotFound implements Filter {

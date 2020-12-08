@@ -19,4 +19,8 @@
         <exception-type>java.sql.SQLException</exception-type>
         <location>/error-handler/sqlexception</location>
     </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.jsp</location>
+    </error-page>
 </web-app>

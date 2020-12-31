@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.16">
     <root id="1">
       <ServerVersion>13.0</ServerVersion>
-      <StartupTime>1606200263</StartupTime>
+      <StartupTime>1609401702</StartupTime>
     </root>
     <database id="2" parent="1" name="learningjaas">
       <ObjectId>16930</ObjectId>
@@ -12,7 +12,7 @@
     <database id="3" parent="1" name="learningjpa">
       <ObjectId>16384</ObjectId>
       <Owner>bookgvi</Owner>
-      <IntrospectionStateNumber>2884</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2960</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|16442|16404|1
 sequence|table|16589|16581|1
@@ -89,7 +89,7 @@ sequence|table|16602|16599|1
       <Comment>standard public schema</Comment>
       <StateNumber>286</StateNumber>
       <Owner>bookgvi</Owner>
-      <IntrospectionStateNumber>2885</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2961</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <access-method id="20" parent="3" name="heap">
@@ -191,10 +191,35 @@ sequence|table|16602|16599|1
     </table>
     <table id="33" parent="19" name="news">
       <ObjectId>16581</ObjectId>
+      <SuccessorIds>16953,16961,16969,16977</SuccessorIds>
       <Owner>bookgvi</Owner>
-      <StateNumber>1166</StateNumber>
+      <StateNumber>2947</StateNumber>
     </table>
-    <column id="34" parent="31" name="id">
+    <table id="34" parent="19" name="news_11_20">
+      <ObjectId>16969</ObjectId>
+      <AncestorIds>16581</AncestorIds>
+      <Owner>bookgvi</Owner>
+      <StateNumber>2912</StateNumber>
+    </table>
+    <table id="35" parent="19" name="news_1_5">
+      <ObjectId>16953</ObjectId>
+      <AncestorIds>16581</AncestorIds>
+      <Owner>bookgvi</Owner>
+      <StateNumber>2906</StateNumber>
+    </table>
+    <table id="36" parent="19" name="news_21_30">
+      <ObjectId>16977</ObjectId>
+      <AncestorIds>16581</AncestorIds>
+      <Owner>bookgvi</Owner>
+      <StateNumber>2915</StateNumber>
+    </table>
+    <table id="37" parent="19" name="news_6_10">
+      <ObjectId>16961</ObjectId>
+      <AncestorIds>16581</AncestorIds>
+      <Owner>bookgvi</Owner>
+      <StateNumber>2909</StateNumber>
+    </table>
+    <column id="38" parent="31" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -202,34 +227,34 @@ sequence|table|16602|16599|1
       <DefaultExpression>nextval(&apos;department_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="35" parent="31" name="name">
+    <column id="39" parent="31" name="name">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1478</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="36" parent="31" name="description">
+    <column id="40" parent="31" name="description">
       <Position>3</Position>
       <DataType>varchar|0s</DataType>
       <StateNumber>1250</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="37" parent="31" name="department_pk">
+    <index id="41" parent="31" name="department_pk">
       <ObjectId>16608</ObjectId>
       <StateNumber>1250</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="38" parent="31" name="department_pk">
+    <key id="42" parent="31" name="department_pk">
       <ObjectId>16609</ObjectId>
       <StateNumber>1240</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>department_pk</UnderlyingIndexName>
     </key>
-    <column id="39" parent="32" name="id">
+    <column id="43" parent="32" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
@@ -237,40 +262,40 @@ sequence|table|16602|16599|1
       <DefaultExpression>nextval(&apos;employee_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>20</TypeId>
     </column>
-    <column id="40" parent="32" name="name">
+    <column id="44" parent="32" name="name">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
       <StateNumber>540</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="41" parent="32" name="salary">
+    <column id="45" parent="32" name="salary">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>540</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="42" parent="32" name="dep_id">
+    <column id="46" parent="32" name="dep_id">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1286</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="43" parent="32" name="employee_pk">
+    <index id="47" parent="32" name="employee_pk">
       <ObjectId>16446</ObjectId>
       <StateNumber>628</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="44" parent="32" name="employee_pk">
+    <key id="48" parent="32" name="employee_pk">
       <ObjectId>16447</ObjectId>
       <StateNumber>628</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>employee_pk</UnderlyingIndexName>
     </key>
-    <foreign-key id="45" parent="32" name="employee_department_id_fk">
+    <foreign-key id="49" parent="32" name="employee_department_id_fk">
       <ObjectId>16632</ObjectId>
       <StateNumber>1260</StateNumber>
       <ColNames>dep_id</ColNames>
@@ -280,7 +305,7 @@ sequence|table|16602|16599|1
       <RefKeyName>department_pk</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="46" parent="33" name="id">
+    <column id="50" parent="33" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -288,26 +313,26 @@ sequence|table|16602|16599|1
       <DefaultExpression>nextval(&apos;news_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="47" parent="33" name="lang">
+    <column id="51" parent="33" name="lang">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1194</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="48" parent="33" name="title">
+    <column id="52" parent="33" name="title">
       <Position>3</Position>
       <DataType>varchar|0s</DataType>
       <StateNumber>1165</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="49" parent="33" name="date">
+    <column id="53" parent="33" name="date">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>1207</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="50" parent="33" name="news_pk">
+    <index id="54" parent="33" name="news_pk">
       <ObjectId>16587</ObjectId>
       <StateNumber>1169</StateNumber>
       <ColNames>id
@@ -315,7 +340,7 @@ lang</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="51" parent="33" name="news_pk">
+    <key id="55" parent="33" name="news_pk">
       <ObjectId>16588</ObjectId>
       <StateNumber>1169</StateNumber>
       <ColNames>id
@@ -323,5 +348,161 @@ lang</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>news_pk</UnderlyingIndexName>
     </key>
+    <rule id="56" parent="33" name="news_insert_11_20">
+      <ObjectId>16985</ObjectId>
+      <StateNumber>2947</StateNumber>
+      <Turn>also</Turn>
+      <Events>I</Events>
+      <FireMode>origin</FireMode>
+      <SourceTextLength>190</SourceTextLength>
+    </rule>
+    <column id="57" parent="34" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2912</StateNumber>
+      <Inherited>1</Inherited>
+      <DefaultExpression>nextval(&apos;news_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="58" parent="34" name="lang">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2912</StateNumber>
+      <Inherited>1</Inherited>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="59" parent="34" name="title">
+      <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>2912</StateNumber>
+      <Inherited>1</Inherited>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="60" parent="34" name="date">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>2912</StateNumber>
+      <Inherited>1</Inherited>
+      <TypeId>23</TypeId>
+    </column>
+    <check id="61" parent="34" name="news_11_20_id_check">
+      <ObjectId>16973</ObjectId>
+      <StateNumber>2912</StateNumber>
+      <ColNames>id</ColNames>
+      <Predicate>(id &gt; 10) AND (id &lt;= 20)</Predicate>
+    </check>
+    <column id="62" parent="35" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2903</StateNumber>
+      <Inherited>1</Inherited>
+      <DefaultExpression>nextval(&apos;news_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="63" parent="35" name="lang">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2903</StateNumber>
+      <Inherited>1</Inherited>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="64" parent="35" name="title">
+      <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>2903</StateNumber>
+      <Inherited>1</Inherited>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="65" parent="35" name="date">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>2903</StateNumber>
+      <Inherited>1</Inherited>
+      <TypeId>23</TypeId>
+    </column>
+    <check id="66" parent="35" name="table_name_id_check">
+      <ObjectId>16957</ObjectId>
+      <StateNumber>2903</StateNumber>
+      <ColNames>id</ColNames>
+      <Predicate>(id &gt;= 1) AND (id &lt;= 5)</Predicate>
+    </check>
+    <column id="67" parent="36" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2915</StateNumber>
+      <Inherited>1</Inherited>
+      <DefaultExpression>nextval(&apos;news_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="68" parent="36" name="lang">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2915</StateNumber>
+      <Inherited>1</Inherited>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="69" parent="36" name="title">
+      <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>2915</StateNumber>
+      <Inherited>1</Inherited>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="70" parent="36" name="date">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>2915</StateNumber>
+      <Inherited>1</Inherited>
+      <TypeId>23</TypeId>
+    </column>
+    <check id="71" parent="36" name="news_21_30_id_check">
+      <ObjectId>16981</ObjectId>
+      <StateNumber>2915</StateNumber>
+      <ColNames>id</ColNames>
+      <Predicate>(id &gt; 20) AND (id &lt; &apos;-30&apos;::integer)</Predicate>
+    </check>
+    <column id="72" parent="37" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2909</StateNumber>
+      <Inherited>1</Inherited>
+      <DefaultExpression>nextval(&apos;news_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="73" parent="37" name="lang">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2909</StateNumber>
+      <Inherited>1</Inherited>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="74" parent="37" name="title">
+      <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>2909</StateNumber>
+      <Inherited>1</Inherited>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="75" parent="37" name="date">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>2909</StateNumber>
+      <Inherited>1</Inherited>
+      <TypeId>23</TypeId>
+    </column>
+    <check id="76" parent="37" name="news_6_10_id_check">
+      <ObjectId>16965</ObjectId>
+      <StateNumber>2909</StateNumber>
+      <ColNames>id</ColNames>
+      <Predicate>(id &gt; 5) AND (id &lt;= 10)</Predicate>
+    </check>
   </database-model>
 </dataSource>

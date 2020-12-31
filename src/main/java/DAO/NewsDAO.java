@@ -14,6 +14,7 @@ import java.sql.*;
 public class NewsDAO implements Serializable {
   public static final long serialVersionUID = 1L;
 
+
   @Inject
   JDBCResource jdbcResource;
 
